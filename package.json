@@ -1,0 +1,34 @@
+{
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^16.0.2",
+    "@cypress/browserify-preprocessor": "^3.0.2",
+    "cypress-sql-server": "^1.0.0",
+    "cypress-tags": "^1.1.2",
+    "init": "^0.1.2",
+    "neat-csv": "^5.0.0"
+  },
+  "devDependencies": {
+    "cypress": "^12.9.0",
+    "multiple-cucumber-html-reporter": "^3.3.0"
+  },
+  "cypress-cucumber-preprocessor": {
+    "stepDefinitions": [
+      "cypress/integration/**/**/*.js"
+    ],
+    "omitFiltered": true,
+    "filterSpecs": true,
+    "json": {
+      "enabled": true,
+      "output": "cypress/cucumberReports/testResult.json"
+    }
+  },
+  "scripts": {
+    "chrome": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --headed --browser chrome --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "chrome-headless": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --browser chrome --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "firefox": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --headed --browser firefox --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "firefox-headless": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --browser firefox --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "edge": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --headed --browser edge --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "edge-headless": "npx cypress run --record --key ec33bd70-1c0f-4b1e-b9d7-2257831b4b80 --browser edge --env url=https://www.visualcomfort.com --env tags=\"@all and not @skip\"",
+    "report": "node cypress/cucumberReports/generateReport.js"
+  }
+}

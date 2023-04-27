@@ -1,0 +1,11 @@
+@all
+- use this tag to run all cases
+
+@skip
+- use this tag for skipping a test 
+
+@checkout
+- use this tag to run cases of the checkout feature
+
+@addToCart
+- use this tag to run cases of the add-to-cart feature
