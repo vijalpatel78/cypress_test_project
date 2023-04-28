@@ -1,4 +1,4 @@
-/* This file contains all common functions which are used in multiple step definitions
+/* This file contains all common functions which are used in multiple step definitions.
 */
 
 import commonElements from '../integration/testElements/commonElements';
@@ -10,7 +10,6 @@ const commonElementObj = new commonElements();
 const productDescriptionPageElementObj = new productDescriptionPageElements();
 const shoppingCartPageElementObj = new shoppingCartPageElements();
 const shippingPageElementObj = new shippingPageElements();
-
 
 Cypress.Commands.add('searchProduct', (searchText,searchOption) => {
     //click on the search icon
