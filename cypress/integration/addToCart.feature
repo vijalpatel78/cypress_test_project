@@ -26,7 +26,7 @@ Feature: Add To Cart
     Examples:
         | menu  | submenu    | name                | finish          | shade                  | quantity | bulb      |
         | Table | Decorative | Linden Medium Lamp  | Plaster White   | 13" x 17" x 12" Linen  | 2        | Uncheck   |
-        #| Floor | Task       | Alma Floor Lamp     | Polished Nickel and Black Marble | No    | 3        | Uncheck   |
+       #| Floor | Task       | Alma Floor Lamp     | Polished Nickel and Black Marble | No    | 3        | Uncheck   |
 
     #--------------------------------------------------- Case:2 -----------------------------------------------------------
     
