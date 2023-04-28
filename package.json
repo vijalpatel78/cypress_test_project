@@ -8,7 +8,7 @@
     "neat-csv": "^5.0.0"
   },
   "devDependencies": {
-    "cypress": "^12.9.0",
+    "cypress": "^12.11.0",
     "multiple-cucumber-html-reporter": "^3.3.0"
   },
   "cypress-cucumber-preprocessor": {

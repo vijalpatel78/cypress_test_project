@@ -1,6 +1,6 @@
 class commonElements{
 
-    //-------------------------- Login Elements ---------------------
+    //---------------------------- Login Icon ------------------------
 
     getLoginButton(){
         return cy.get('div.header-panel-right').find('li.link.authorization-link').children('a').contains('Login',{matchCase:false});
@@ -9,16 +9,16 @@ class commonElements{
     //--------------------------- Menu Elements ---------------------
 
     getMenuButton(){
-        return cy.get('span.action.nav-toggle',{timeout:60000});
+        return cy.get('span.action.nav-toggle');
     }
 
     getMainMenuName(menuName){
-        return cy.get('ul#rw-menutop',{timeout:60000}).children('li').children('a').contains(menuName,{matchCase:false}).prev('span.rootmenu-click',{timeout:60000});
+        return cy.get('ul#rw-menutop').children('li').children('a').contains(menuName,{matchCase:false}).prev('span.rootmenu-click');
     }
 
     getSubMenuName(menuName,subMenuName){
-        return cy.get('ul#rw-menutop').children('li').children('a').contains(menuName,{matchCase:false}).next('div.megamenu.fullmenu.clearfix.categoriesmenu',{timeout:60000})
-        .find('div.title.cat-name',{timeout:60000}).children('a').contains(subMenuName,{matchCase:false});
+        return cy.get('ul#rw-menutop').children('li').children('a').contains(menuName,{matchCase:false}).next('div.megamenu.fullmenu.clearfix.categoriesmenu')
+        .find('div.title.cat-name').children('a').contains(subMenuName,{matchCase:false});
     }
 
     //--------------------------- My Cart Elements ---------------------
@@ -111,6 +111,16 @@ class commonElements{
 
     getSearchResultText(){
         return cy.get('div.page-title-wrapper').find('span.base');
+    }
+
+    //--------------------------- Home Page Elements ---------------------
+
+    getHomePageTitleText(){
+        return cy.get('header.page-header').find('a[title="Visual Comfort | Experience Visual Comfort"]');
+    }
+
+    getHomePageBody(){
+        return cy.get('main#maincontent');
     }
 
 } export default commonElements;

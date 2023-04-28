@@ -28,12 +28,12 @@ Cypress.Commands.add('searchProduct', (searchText,searchOption) => {
 
 Cypress.Commands.add('enterProductDetails', (finish,shade,quantity,bulb) => {
     //select the given finish value
-    productDescriptionPageElementObj.getFinishDropdown().select(finish);
+    productDescriptionPageElementObj.getFinishDropdown().should('be.visible').scrollIntoView().select(finish);
 
     //select the given shade value only if the given value is not 'No'
     /* 'No' value means the shade dropdown is not present that's why the value is not provided for it */
     if(shade.toLowerCase() !== 'no'){
-        productDescriptionPageElementObj.getShadeDropdown().select(shade);
+        productDescriptionPageElementObj.getShadeDropdown().should('be.visible').scrollIntoView().select(shade);
     }else{
         cy.log('Shade dropdown not found');
     }
@@ -50,7 +50,7 @@ Cypress.Commands.add('enterProductDetails', (finish,shade,quantity,bulb) => {
     }
 
     //enter the given quantity
-    productDescriptionPageElementObj.getQuantityTextbox().clear().type(quantity);
+    productDescriptionPageElementObj.getQuantityTextbox().should('be.visible').clear().type(quantity);
 });
 
 Cypress.Commands.add('convertPriceToNumber', (price) => {

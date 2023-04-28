@@ -19,7 +19,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13934000000
+              "duration": 12769000000
             }
           },
           {
@@ -32,7 +32,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 303000000
+              "duration": 500000000
             }
           },
           {
@@ -45,7 +45,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 19077000000
+              "duration": 12703000000
             }
           },
           {
@@ -58,7 +58,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2834000000
+              "duration": 1820000000
             }
           },
           {
@@ -71,7 +71,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 20113000000
+              "duration": 5221000000
             }
           },
           {
@@ -84,7 +84,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 752000000
+              "duration": 1998000000
             }
           },
           {
@@ -97,7 +97,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 4557000000
+              "duration": 15279000000
             }
           },
           {
@@ -110,7 +110,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 543000000
+              "duration": 555000000
             }
           },
           {
@@ -123,7 +123,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 2863000000
+              "duration": 15750000000
             }
           },
           {
@@ -136,7 +136,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 298000000
+              "duration": 8192000000
             }
           },
           {
@@ -149,7 +149,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1605000000
+              "duration": 1357000000
             }
           }
         ],
@@ -169,7 +169,7 @@
         "description": "",
         "id": "add-to-cart;the-user-should-be-able-to-search-the-product-and-add-it-to-the-cart",
         "keyword": "Scenario Outline",
-        "line": 42,
+        "line": 43,
         "name": "The user should be able to search the product and add it to the cart",
         "steps": [
           {
@@ -182,7 +182,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 8145000000
+              "duration": 13877000000
             }
           },
           {
@@ -195,111 +195,111 @@
             },
             "result": {
               "status": "passed",
-              "duration": 172000000
+              "duration": 647000000
             }
           },
           {
             "arguments": [],
             "keyword": "When ",
-            "line": 31,
+            "line": 32,
             "name": "the user search 'Fan' and select 'Ceiling Fan' from the search suggestions",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 20801000000
-            }
-          },
-          {
-            "arguments": [],
-            "keyword": "And ",
-            "line": 32,
-            "name": "collects the name, price and designer name of 'Maverick 88\" Ceiling Fan' product from the products list",
-            "match": {
-              "location": "not available:0"
-            },
-            "result": {
-              "status": "passed",
-              "duration": 2303000000
+              "duration": 75041000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 33,
-            "name": "clicks on the 'Maverick 88\" Ceiling Fan' product from the products list",
+            "name": "collects the name, price and designer name of 'Maverick 88\" Ceiling Fan' product from the products list",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 12930000000
+              "duration": 2824000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 34,
-            "name": "validates product name, price and designer name on the product description page",
+            "name": "clicks on the 'Maverick 88\" Ceiling Fan' product from the products list",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 575000000
+              "duration": 23525000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 35,
-            "name": "selects 'Brushed Steel Housing With Koa Blades' finish & 'No' shade and enters '2' quantity with 'No' bulb",
+            "name": "validates product name, price and designer name on the product description page",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 7316000000
+              "duration": 3367000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
             "line": 36,
+            "name": "selects 'Brushed Steel Housing With Koa Blades' finish & 'No' shade and enters '2' quantity with 'No' bulb",
+            "match": {
+              "location": "not available:0"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 13590000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 37,
             "name": "clicks on the Add to Cart button",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 1449000000
+              "duration": 1840000000
             }
           },
           {
             "arguments": [],
             "keyword": "Then ",
-            "line": 37,
+            "line": 38,
             "name": "the success message including 'Maverick 88\" Ceiling Fan' product name should get displayed",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 2715000000
+              "duration": 3202000000
             }
           },
           {
             "arguments": [],
             "keyword": "And ",
-            "line": 38,
+            "line": 39,
             "name": "the count of My Cart should get increased by the entered number of product '2' quantity",
             "match": {
               "location": "not available:0"
             },
             "result": {
               "status": "passed",
-              "duration": 1823000000
+              "duration": 2232000000
             }
           }
         ],
@@ -352,7 +352,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 6178000000
+              "duration": 17924000000
             }
           },
           {
@@ -365,7 +365,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 141000000
+              "duration": 185000000
             }
           },
           {
@@ -410,7 +410,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 83067000000
+              "duration": 112114000000
             }
           },
           {
@@ -423,7 +423,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1235000000
+              "duration": 3278000000
             }
           },
           {
@@ -436,7 +436,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 926000000
+              "duration": 1314000000
             }
           },
           {
@@ -449,7 +449,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9600000000
+              "duration": 15477000000
             }
           },
           {
@@ -462,7 +462,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 911000000
+              "duration": 1122000000
             }
           }
         ],
@@ -495,7 +495,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5256000000
+              "duration": 10984000000
             }
           },
           {
@@ -508,7 +508,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 148000000
+              "duration": 201000000
             }
           },
           {
@@ -553,7 +553,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 74900000000
+              "duration": 81079000000
             }
           },
           {
@@ -566,7 +566,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1297000000
+              "duration": 1494000000
             }
           },
           {
@@ -579,7 +579,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9492000000
+              "duration": 14493000000
             }
           },
           {
@@ -592,7 +592,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 305000000
+              "duration": 1240000000
             }
           },
           {
@@ -605,7 +605,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1833000000
+              "duration": 3044000000
             }
           },
           {
@@ -618,7 +618,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 12740000000
+              "duration": 26273000000
             }
           },
           {
@@ -631,7 +631,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 16799000000
+              "duration": 23194000000
             }
           }
         ],
@@ -664,7 +664,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 5222000000
+              "duration": 10540000000
             }
           },
           {
@@ -677,7 +677,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 280000000
+              "duration": 632000000
             }
           },
           {
@@ -722,7 +722,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 67283000000
+              "duration": 79849000000
             }
           },
           {
@@ -735,7 +735,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 1254000000
+              "duration": 1384000000
             }
           },
           {
@@ -748,7 +748,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 9258000000
+              "duration": 10381000000
             }
           },
           {
@@ -761,7 +761,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 536000000
+              "duration": 357000000
             }
           },
           {
@@ -774,7 +774,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 18021000000
+              "duration": 18687000000
             }
           },
           {
@@ -787,7 +787,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 166000000
+              "duration": 136000000
             }
           },
           {
@@ -800,7 +800,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 13352000000
+              "duration": 15704000000
             }
           },
           {
@@ -813,7 +813,7 @@
             },
             "result": {
               "status": "passed",
-              "duration": 15487000000
+              "duration": 14705000000
             }
           }
         ],

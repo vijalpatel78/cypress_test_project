@@ -25,11 +25,11 @@ class productDescriptionPageElements{
     }
 
     getFinishDropdown(){
-        return cy.get('select[id="attribute2461"]');
+        return cy.get('select#attribute2461');
     }
 
     getShadeDropdown(){
-        return cy.get('select[id="attribute1651"]');
+        return cy.get('select#attribute1651');
     }
     
     getQuantityTextbox(){

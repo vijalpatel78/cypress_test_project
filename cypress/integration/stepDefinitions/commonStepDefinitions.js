@@ -9,6 +9,10 @@ Given('the user is on the Home page', () => {
     cy.title().then((currentPageTitle) => {
         expect(currentPageTitle).to.equal('Signature Designer Light Fixtures | Experience Visual Comfort & Co.');
     });
+    //wait till the page gets loaded
+    commonElementObj.getHomePageTitleText().should('be.visible');
+    commonElementObj.getHomePageBody().should('be.visible');
+    cy.wait(2000);
 });
 
 Given('the user is not logged-in', () => {

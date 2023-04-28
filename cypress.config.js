@@ -18,6 +18,9 @@ module.exports = defineConfig({
   env: {
     url: 'https://www.visualcomfort.com'
   },
+  retries: {
+    runMode: 1
+  },
   defaultCommandTimeout: 60000,
   pageLoadTimeout: 180000
 });

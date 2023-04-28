@@ -11,11 +11,11 @@ let expectedProductName, expectedSalePrice, expectedDesignerName;
 
 When('the user clicks on the {string} sub-menu of {string} menu', (subMenuName,menuName) => {
     //click on the navigation menu icon button
-    commonElementObj.getMenuButton().should('be.visible').click({force: true});
+    commonElementObj.getMenuButton().click();
     //click on the given menu name
-    commonElementObj.getMainMenuName(menuName).should('be.visible').click();
+    commonElementObj.getMainMenuName(menuName).click();
     //click on the given sub menu name
-    commonElementObj.getSubMenuName(menuName,subMenuName).should('be.visible').click();
+    commonElementObj.getSubMenuName(menuName,subMenuName).click();
     //validate whether the current URL contains the menu and sub-menu name or not
     cy.url().should('have.string',menuName.toLowerCase()).and('have.string',subMenuName.toLowerCase());
 });
