@@ -16,8 +16,12 @@ When('the user clicks on the {string} sub-menu of {string} menu', (subMenuName,m
     commonElementObj.getMainMenuName(menuName).click();
     //click on the given sub menu name
     commonElementObj.getSubMenuName(menuName,subMenuName).click();
-    //validate whether the current URL contains the menu and sub-menu name or not
-    cy.url().should('have.string',menuName.toLowerCase()).and('have.string',subMenuName.toLowerCase());
+    cy.wait(1000);
+});
+
+When('the user search {string} and select {string} from the search suggestions', (searchText,searchOption) => {
+    //search and select the given text
+    cy.searchProduct(searchText,searchOption);
 });
 
 When('collects the name, price and designer name of {string} product from the products list', (productName) => {
@@ -38,22 +42,6 @@ When('clicks on the {string} product from the products list', (productName) => {
     productListPageElementObj.getProductName(productName).click({force:true});
 });
 
-When('validates product name, price and designer name on the product description page', () => {
-    //validate actual/displayed product name, price and designer name with the expected product details
-    productDescriptionPageElementObj.getProductName().then((productName) => {
-        expect(productName.text().trim().toLowerCase()).to.equal(expectedProductName.trim().toLowerCase());
-    });
-    productDescriptionPageElementObj.getProductDesignerName().then((designerName) => {
-        expect(designerName.text().trim().toLowerCase()).to.equal(expectedDesignerName.trim().toLowerCase());
-    });
-    productDescriptionPageElementObj.getHeaderProductPrice().then((headerPrice) => {
-        expect(headerPrice.text()).to.equal(expectedSalePrice);
-    });
-    productDescriptionPageElementObj.getFooterProductPrice().then((footerPrice) => {
-        expect(footerPrice.text()).to.equal(expectedSalePrice);
-    });
-});
-
 When('selects {string} finish & {string} shade and enters {string} quantity with {string} bulb', (finish,shade,quantity,bulb) => {
     //select or enter the given product details
     cy.enterProductDetails(finish,shade,quantity,bulb);
@@ -70,18 +58,43 @@ When('closes the Item Added to Cart popup', () => {
     cy.wait(1000);
 });
 
-When('the user search {string} and select {string} from the search suggestions', (searchText,searchOption) => {
-    //search and select the given text
-    cy.searchProduct(searchText,searchOption);
+Then('the products list page of {string}>>{string} sub-menu should get opened', (subMenuName,menuName) => {
+    //validate whether the current URL contains the menu and sub-menu name or not
+    cy.url().should('have.string',menuName.toLowerCase()).and('have.string',subMenuName.toLowerCase());
+});
+
+Then('the products list of {string} search text should get opened', (searchOption) => {
+    //validate whether the search result header contains the given search option or not
+    commonElementObj.getSearchResultText().contains(searchOption,{matchCase:false});
+});
+
+Then('the product description page of {string} product should get opened', (productName) => {
+
+});
+
+Then('product name, price and designer name on the product description page should be displayed correctly', () => {
+    //validate actual/displayed product name, price and designer name with the expected product details
+    productDescriptionPageElementObj.getProductName().then((productName) => {
+        expect(productName.text().trim().toLowerCase()).to.equal(expectedProductName.trim().toLowerCase());
+    });
+    productDescriptionPageElementObj.getProductDesignerName().then((designerName) => {
+        expect(designerName.text().trim().toLowerCase()).to.equal(expectedDesignerName.trim().toLowerCase());
+    });
+    productDescriptionPageElementObj.getHeaderProductPrice().then((headerPrice) => {
+        expect(headerPrice.text()).to.equal(expectedSalePrice);
+    });
+    productDescriptionPageElementObj.getFooterProductPrice().then((footerPrice) => {
+        expect(footerPrice.text()).to.equal(expectedSalePrice);
+    });
+});
+
+Then('the success message including {string} product name should get displayed', (productName) => {
+    //validate whether the success message contains the given product name or not
+    productDescriptionPageElementObj.getProductAddedMessage().contains(productName,{matchCase:false}).scrollIntoView();
 });
 
 Then('the count of My Cart should get increased by the entered number of product {string} quantity', (quantity) => {
     //validate the actual/displayed cart count with the expected count
     commonElementObj.getCartCount().should('have.text',quantity).scrollIntoView();
     cy.wait(1000);
-});
-
-Then('the success message including {string} product name should get displayed', (productName) => {
-    //validate whether the success message contains the given product name or not
-    productDescriptionPageElementObj.getProductAddedMessage().contains(productName,{matchCase:false}).scrollIntoView();
 });
