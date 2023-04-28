@@ -12,6 +12,7 @@ let expectedProductName, expectedSalePrice, expectedDesignerName;
 When('the user clicks on the {string} sub-menu of {string} menu', (subMenuName,menuName) => {
     //click on the navigation menu icon button
     commonElementObj.getMenuButton().click();
+    cy.wait(1000);
     //click on the given menu name
     commonElementObj.getMainMenuName(menuName).click();
     //click on the given sub menu name
@@ -65,11 +66,16 @@ Then('the products list page of {string}>>{string} sub-menu should get opened', 
 
 Then('the products list of {string} search text should get opened', (searchOption) => {
     //validate whether the search result header contains the given search option or not
-    commonElementObj.getSearchResultText().contains(searchOption,{matchCase:false});
+    commonElementObj.getSearchResultText().then((searchResult) => {
+        expect(searchResult.text().toLowerCase().trim()).to.include(searchOption.toLowerCase().trim())
+    });
 });
 
 Then('the product description page of {string} product should get opened', (productName) => {
-
+    //validate whether the page title contains the given product name or not
+    cy.title().then((currentPageTitle) => {
+        expect(currentPageTitle.toLowerCase().trim()).to.include(productName.toLowerCase().trim());
+    });
 });
 
 Then('product name, price and designer name on the product description page should be displayed correctly', () => {
@@ -90,7 +96,9 @@ Then('product name, price and designer name on the product description page shou
 
 Then('the success message including {string} product name should get displayed', (productName) => {
     //validate whether the success message contains the given product name or not
-    productDescriptionPageElementObj.getProductAddedMessage().contains(productName,{matchCase:false}).scrollIntoView();
+    productDescriptionPageElementObj.getProductAddedMessage().then((msg) => {
+        expect(msg.text().toLowerCase().trim()).to.include(productName.toLowerCase().trim());
+    });
 });
 
 Then('the count of My Cart should get increased by the entered number of product {string} quantity', (quantity) => {
