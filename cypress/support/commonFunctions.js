@@ -65,6 +65,7 @@ Cypress.Commands.add('validateProductsList', (page,expectedProductNameList,produ
     productsListElement.then((list) => {
        //traverse each product from the list
         for(let i=0; i<list.length; i++){
+            
             //check the page name to validate list
             if(page.toLowerCase() === 'my cart'){
                 //get the displayed product name from the list
@@ -91,23 +92,9 @@ Cypress.Commands.add('validateProductsList', (page,expectedProductNameList,produ
     });
 });
 
-/*
-Cypress.Commands.add('validateProductOptions', (optionsElement,finishValElement,expectedFinishVal,shadeValElement,expectedShadeVal) => {
-    optionsElement.each(($el, index, $list) => {
-        let label = $el.text().toLowerCase().trim();
-        if(label === 'finish'){
-            finishValElement.should('have.text',expectedFinishVal);
-        }else if(label === 'shade'){
-            shadeValElement.should('have.text',expectedShadeVal);
-        }else{
-            throw new Error('The unknown '+label+' label name is found. It should be either \'Finish\' or \'Shade\'.');
-        }
+Cypress.Commands.add('validateProductDetailsViaDisplayedText', (fieldValueElement,expectedValue) => {
+    //validate displayed field value with the expected value
+    fieldValueElement.then((fieldValue) => {
+        expect(fieldValue.text().toLowerCase().trim()).to.equal(expectedValue.toLowerCase().trim());
     });
 });
-
-Cypress.Commands.add('collectDisplayedText',(fieldElement) => {
-    fieldElement.then((field) => {
-        return field.text();
-    });
-});
-*/
