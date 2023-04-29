@@ -80,18 +80,10 @@ Then('the product description page of {string} product should get opened', (prod
 
 Then('product name, price and designer name on the product description page should be displayed correctly', () => {
     //validate actual/displayed product name, price and designer name with the expected product details
-    productDescriptionPageElementObj.getProductName().then((productName) => {
-        expect(productName.text().trim().toLowerCase()).to.equal(expectedProductName.trim().toLowerCase());
-    });
-    productDescriptionPageElementObj.getProductDesignerName().then((designerName) => {
-        expect(designerName.text().trim().toLowerCase()).to.equal(expectedDesignerName.trim().toLowerCase());
-    });
-    productDescriptionPageElementObj.getHeaderProductPrice().then((headerPrice) => {
-        expect(headerPrice.text()).to.equal(expectedSalePrice);
-    });
-    productDescriptionPageElementObj.getFooterProductPrice().then((footerPrice) => {
-        expect(footerPrice.text()).to.equal(expectedSalePrice);
-    });
+    cy.validateProductDetailsViaDisplayedText(productDescriptionPageElementObj.getProductName(),expectedProductName);
+    cy.validateProductDetailsViaDisplayedText(productDescriptionPageElementObj.getProductDesignerName(),expectedDesignerName);
+    cy.validateProductDetailsViaDisplayedText(productDescriptionPageElementObj.getHeaderProductPrice(),expectedSalePrice);
+    cy.validateProductDetailsViaDisplayedText(productDescriptionPageElementObj.getFooterProductPrice(),expectedSalePrice);
 });
 
 Then('the success message including {string} product name should get displayed', (productName) => {
