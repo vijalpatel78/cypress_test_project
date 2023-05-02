@@ -43,5 +43,6 @@ Feature: Add To Cart
             And the count of My Cart should get increased by the entered number of product '<quantity>' quantity
 
     Examples:
-        | searchText | searchOption | name                     | finish                                | shade | quantity | bulb |
-        | Fan        | Ceiling Fan  | Maverick 88" Ceiling Fan | Brushed Steel Housing With Koa Blades | No    | 2        | No   |
+        | searchText | searchOption | name                  | finish                                      | shade | quantity | bulb |
+        | Fan        | Ceiling Fan  | Aspen 70" Ceiling Fan | Matte White Housing With Matte White Blades | No    | 3        | No   |
+
